@@ -60,3 +60,7 @@ typings/
 # custom middleware
 
 dev_middleware.js
+
+# built files
+
+lib/assets/css
