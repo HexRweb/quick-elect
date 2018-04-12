@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{title}}</title>
+		<link rel="stylesheet" href="{{asset_path}}/lib/materialize.css" />
+		{{#if dev}}
+		<script type="text/javascript" src="http://localhost:35729/livereload.js"></script>
+		{{/if}}
+	</head>
+	<body>
+		{{{body}}}
+	</body>
+	<script async src="{{asset_path}}/lib/materialize.js"></script>
+</html>
