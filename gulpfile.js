@@ -87,18 +87,13 @@ gulp.task('reset', () => {
 	return del.sync('./lib/assets/css/**/*');
 })
 
-gulp.task('sass', () => {
-	return gulp.src('./src/**/*.scss')
-		.pipe(sass().on('error', sass.logError))
-		.pipe(gulp.dest('./build'));
-});
-
 // Adds backwards compatibility for css properties, increases efficiency and minifies
 gulp.task('css', () => {
 	const destination = './lib/assets/css';
 
 	// We're not concatenating the css files together because sass should be organized in such a way it's not necessary.
-	return gulp.src(['./lib/assets/sass/**/*.css'])
+	return gulp.src(['./lib/assets/sass/**/*.scss'])
+		.pipe(sass().on('error', sass.logError))
 		.pipe(csscomb().on('error', swallowError))
 		.pipe(sourcemaps.init())
 		.pipe(postcss(processors).on('error', swallowError))
@@ -182,7 +177,7 @@ gulp.task('watch', () => {
 });
 
 gulp.task('build', (cb) => {
-	run('reset', 'sass', ['css', 'js'], /* 'compile-html', */ cb);
+	run('reset', ['css', 'js'], /* 'compile-html', */ cb);
 });
 
 gulp.task('default', () => {

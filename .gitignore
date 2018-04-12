@@ -56,3 +56,11 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# custom middleware
+
+dev_middleware.js
+
+# built files
+
+lib/assets/css

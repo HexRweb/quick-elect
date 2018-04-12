@@ -6,9 +6,12 @@
 		{{#if dev}}
 		<script type="text/javascript" src="http://localhost:35729/livereload.js"></script>
 		{{/if}}
+
+		{{qe_head}}
 	</head>
 	<body>
 		{{{body}}}
 	</body>
 	<script async src="{{asset_path}}/lib/materialize.js"></script>
+	{{qe_foot}}
 </html>

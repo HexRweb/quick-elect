@@ -1,0 +1,44 @@
+.voting-block h2 {
+	text-align: center;
+}
+
+.candidates {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+
+	label,
+	label span {
+		width: 100%;
+		height: 100% !important;
+	}
+
+	label {
+		border: 1px solid grey;
+		margin: 1em 0;
+
+		span {
+			padding: 2rem;
+
+			&:before,
+			&:after {
+				display: none;
+			}
+		}
+	}
+
+	input:checked + span {
+		background: green;
+		color: white;
+	}
+
+}
+
+.submission-box button {
+	font-size: 2rem;
+	padding: 1.5rem;
+	margin: 6rem 0 2rem;
+	width: 100%;
+	height: auto;
+}
