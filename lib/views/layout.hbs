@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>{{title}}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="{{asset_path}}/lib/materialize.css" />
 		{{#if dev}}
 		<script type="text/javascript" src="http://localhost:35729/livereload.js"></script>
@@ -12,6 +13,8 @@
 	<body>
 		{{{body}}}
 	</body>
-	<script async src="{{asset_path}}/lib/materialize.js"></script>
+	{{!-- @todo: allow async loading --}}
+	<script src="{{asset_path}}/lib/materialize.js"></script>
 	{{qe_foot}}
+	<script>M.AutoInit();</script>
 </html>
